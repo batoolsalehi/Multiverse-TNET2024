@@ -174,47 +174,6 @@ def detecting_related_file_paths(path,categories,episodes):
     return selected
 
 
-# def get_data(data_paths,modality,key,train_catergory,aug_category,percentage_WI):   # per cat for now, need to add per epside for FL part
-#     #####gets train catergory and return test sets for all catergories
-#     for l in tqdm(data_paths):
-#         randperm = np.load(l+'/ranperm.npy')
-#         open_file = open_npz(l+'/'+modality+'.npz',key)
-#         if train_catergory[0] in l.split('/'):
-#             try:
-#                 train_data = np.concatenate((train_data, open_file[randperm[:int(0.8*len(randperm))]]),axis = 0)
-#                 validation_data = np.concatenate((validation_data, open_file[randperm[int(0.8*len(randperm)):int(0.9*len(randperm))]]),axis = 0)
-#             except NameError:
-#                 train_data = open_file[randperm[:int(0.8*len(randperm))]]
-#                 validation_data = open_file[randperm[int(0.8*len(randperm)):int(0.9*len(randperm))]]
-
-#         ####PER CAT
-#         if 'Cat1' in l.split('/'):
-#             try:
-#                 test_data_cat1 = np.concatenate((test_data_cat1, open_file[randperm[int(0.9*len(randperm)):]]),axis = 0)
-#             except NameError:
-#                 test_data_cat1 = open_file[randperm[int(0.9*len(randperm)):]]
-
-#         elif 'Cat2' in l.split('/'):
-#             try:
-#                 test_data_cat2 = np.concatenate((test_data_cat2, open_file[randperm[int(0.9*len(randperm)):]]),axis = 0)
-#             except NameError:
-#                 test_data_cat2 = open_file[randperm[int(0.9*len(randperm)):]]
-
-#         elif 'Cat3' in l.split('/'):
-#             try:
-#                 test_data_cat3 = np.concatenate((test_data_cat3, open_file[randperm[int(0.9*len(randperm)):]]),axis = 0)
-#             except NameError:
-#                 test_data_cat3 = open_file[randperm[int(0.9*len(randperm)):]]
-
-#         elif 'Cat4' in l.split('/'):
-#             try:
-#                 test_data_cat4 = np.concatenate((test_data_cat4, open_file[randperm[int(0.9*len(randperm)):]]),axis = 0)
-#             except NameError:
-#                 test_data_cat4 = open_file[randperm[int(0.9*len(randperm)):]]
-#     print("shapes",train_data.shape, validation_data.shape, test_data_cat1.shape, test_data_cat3.shape)
-#     return train_data, validation_data, test_data_cat1, test_data_cat1, test_data_cat3, test_data_cat3
-
-
 def get_data(data_paths,modality,key,train_catergory,aug_category,percentage_WI):   # per cat for now, need to add per epside for FL part
     #####gets train catergory and return test sets for all catergories
     for l in tqdm(data_paths):
