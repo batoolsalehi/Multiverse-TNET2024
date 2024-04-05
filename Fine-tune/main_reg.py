@@ -1,6 +1,6 @@
 ########################################################
-#Project name: Infocom
-#Date: 14/July/2021
+#Project name: Multiverse
+#Date: 2024
 ########################################################
 from __future__ import division
 
